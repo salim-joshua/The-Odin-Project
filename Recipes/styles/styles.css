@@ -45,3 +45,44 @@ html, body {
     margin: auto;
     max-width: 1080px;
 }
+
+.section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.section-heading {
+    flex-basis: 100%;
+    font-size: 30px;
+}
+
+.recipe-card {
+    position: relative;
+    width:30%;
+    background-color: burlywood;
+    border-radius: 10px;
+}
+
+.card-text {
+    padding: 20px;
+}
+
+.card-text a {
+    text-decoration: none;
+    color: darkgreen;
+    font-size: 22px;
+    font-weight: 700;
+    padding-bottom: 10px;
+    display: block;
+}
+
+.recipe-card img {
+    width: 100%;
+    max-height: 180px;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
