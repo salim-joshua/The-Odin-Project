@@ -30,3 +30,71 @@ html, body {
     font-weight: 400;
     font-size: var(--general-text-size);
 }
+
+.header, .hero-section {
+    background-color: var(--background-color);
+    color: var(--header-logo-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-bar {
+    display: flex;
+    width: 80%;
+    max-width: 1250px;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.low-contrast {
+    color: var(--sec-text-color);
+}
+
+.hero-column {
+    width: 80%;
+    max-width: 1250px;
+    padding: 100px 20px;
+    display: flex;
+    gap: 50px;
+}
+
+.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: auto;
+    background-color: rgba(249, 249, 249, 0.308);
+}
+
+.left-side, .right-side {
+    flex: 0 50%;
+}
+
+.header-title {
+    font-size: var(--hero-text-size);
+    margin-bottom: 10px;
+}
+
+.header-subtitle {
+    font-size: var(--general-text-size);
+    margin-bottom: 20px;
+}
+
+.header-btn {
+    background-color: var(--highlight-color);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 32px;
+    color: var(--header-logo-color);
+    font-size: var(--general-text-size);
+    font-weight: 600;
+}
