@@ -1,0 +1,20 @@
+:root {
+    --background-color: #1F2937;
+    --highlight-color: #3C82F6;
+    --quote-color: #E4E7EB;
+    --main-text-color: #F9FAFB;
+    --secondary-text-color: #E5E7EB;
+    --header-logo-color: #F9FAF8;
+    --text-color: #1F2937;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
