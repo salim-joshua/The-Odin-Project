@@ -193,3 +193,10 @@ q {
     font-weight: 600;
 }
 
+footer {
+    padding: 40px;
+    background-color: var(--background-color);
+    color: var(--main-text-color);
+    text-align: center;
+}
+
