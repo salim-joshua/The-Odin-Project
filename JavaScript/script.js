@@ -1,6 +1,11 @@
 // @ts-nocheck
 
-let firstName = "John"
-let surname = "Doe"
+const button = document.querySelector("button");
 
-console.log(firstName + surname)
+function greet() {
+  const name = prompt("What is your name?");
+  const greeting = document.querySelector("#greeting");
+  greeting.textContent = `Hello ${name}, nice to see you!`;
+}
+
+button.addEventListener("click", greet);
