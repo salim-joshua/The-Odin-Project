@@ -1,9 +1,22 @@
 // I get it, you're curious, 
 // but it's OK if you don't understand what's going on in here, you'll learn it in time.
 
-const abTroubleshoot = require("./troubleshooting.js");
+function troubleshooting() {
+	const a = 1;
+	const b = 1;
 
-const result = abTroubleshoot();
+	let result;
+
+	// Edit between these lines
+	// =================================
+	result = a + b;
+
+	// =================================
+
+	return result;
+}
+
+const result = troubleshooting();
 
 if(result === 2) {
 	console.log("Congrats! You got the correct answer");
