@@ -14,7 +14,7 @@ const userInput = () => {
 function checkInput(playerInput) {
   playerInput = playerInput.toLowerCase();
 
-  if (validInputs.indexOf(playerInput) > -1) {
+  if (validInputs.includes(playerInput)) {
     return playerInput;
   } else {
     let newInput = prompt("Your input was not valid. Please enter rock, paper, or scissors!");
