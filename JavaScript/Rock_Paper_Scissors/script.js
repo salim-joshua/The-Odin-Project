@@ -12,14 +12,10 @@ const userInput = () => {
     )};
 
 function checkInput(playerInput) {
-  playerInput = playerInput.toLowerCase();
-
-  if (validInputs.includes(playerInput)) {
-    return playerInput;
-  } else {
-    let newInput = prompt("Your input was not valid. Please enter rock, paper, or scissors!");
-    checkInput(newInput);
-  }
+    while (!validInputs.includes(playerInput.toLowerCase())) {
+        playerInput = prompt("Your input was not valid. Please enter rock, paper, or scissors!");
+    }
+    return playerInput.toLowerCase();
 }
 
 function calculateRoundWinner(humanChoice, computerChoice) {
