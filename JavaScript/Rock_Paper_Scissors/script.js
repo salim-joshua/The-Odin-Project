@@ -66,7 +66,7 @@ function calculateOverallWinner () {
 }
 
 function playGame () {
-    for (let i = 0; i <= 5 ; i++) {
+    for (let i = 0; i < 5 ; i++) {
         playRound();
     }
     calculateOverallWinner();
