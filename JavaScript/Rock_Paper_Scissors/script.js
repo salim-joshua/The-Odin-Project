@@ -27,19 +27,11 @@ function calculateRoundWinner(humanChoice, computerChoice) {
     (humanChoice === "paper" && computerChoice === "rock") ||
     (humanChoice === "scissors" && computerChoice === "paper")
   ) {
-    humanScore += 1; 
+    humanScore++; 
     console.log(`The Computer has picked ${computerChoice}. You win!`);
-  } else if (
-    (humanChoice === "rock" && computerChoice === "paper") ||
-    (humanChoice === "paper" && computerChoice === "scissors") ||
-    (humanChoice === "scissors" && computerChoice === "rock")
-  ) {
-    computerScore += 1;
-    console.log(`The Computer has picked ${computerChoice}. You lose!`);
   } else {
-    console.log(
-      `Invalid input! (Player: ${humanChoice}, Computer: ${computerChoice})`
-    );
+    computerScore++;
+    console.log(`The Computer has picked ${computerChoice}. You lose!`);
   }
 }
 
