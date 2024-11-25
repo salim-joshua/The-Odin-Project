@@ -60,4 +60,6 @@ function playGame () {
     calculateOverallWinner();
 }
 
+let test = "hallo";
+
 playGame()
