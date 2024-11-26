@@ -22,6 +22,18 @@ div.append(divHeading,divText);
 
 container.appendChild(div);
 
+// Button Events
+
+const btn = document.querySelector("#btn");
+btn.onclick = alertFunction;
+
+const btnTwo = document.querySelector("#btn-2");
+btnTwo.addEventListener("click", alertFunction);
+
+function alertFunction () {
+    alert("Yaaay!")
+}
+
 
 
 
