@@ -13,13 +13,13 @@ button.addEventListener("click", () => {
     listItem.append(span, deleteBtn);
     span.textContent = item;
     deleteBtn.textContent = "delete";
+    
+    deleteBtn.addEventListener("click", (e) => {
+        e.currentTarget.parentNode.remove();
+    })
 
     list.appendChild(listItem);
-
-    /*TODO: 
-    1. Attach an event handler to the delete button so that, when clicked, it will delete the entire list item (<li>...</li>).
-    2. Finally, use the focus() method to focus the input element ready for entering the next shopping list item.
     
-    */
+    input.focus();
 
 });
