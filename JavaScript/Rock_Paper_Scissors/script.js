@@ -52,3 +52,5 @@ function calculateOverallWinner () {
         console.log("What a bummer! Looks like the computer won this battle!");
     }
 }
+
+let test = "Hallo";
