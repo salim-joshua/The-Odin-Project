@@ -1,4 +1,9 @@
-const validInputs = ["rock", "paper", "scissors"];
+const buttons = document.querySelectorAll(".rps-btn");
+const resultText = document.querySelector(".result-text");
+const scoreText = document.querySelector(".score");
+const winnerText = document.querySelector(".winner");
+const validInputs = ["Rock", "Paper", "Scissors"];
+
 let humanScore = 0;
 let computerScore = 0;
 
@@ -6,51 +11,52 @@ const randomChoice = () => {
   return validInputs[Math.floor(Math.random() * 3)];
 };
 
-const userInput = () => {
-    return checkInput(
-        prompt("Rock, Paper or Scissors?")
-    )};
-
-function checkInput(playerInput) {
-    while (!validInputs.includes(playerInput.toLowerCase())) {
-        playerInput = prompt("Your input was not valid. Please enter rock, paper, or scissors!");
-    }
-    return playerInput.toLowerCase();
-}
-
 function calculateRoundWinner(humanChoice, computerChoice) {
 
   if (humanChoice === computerChoice) {
-    console.log(`It's a draw! You both picked ${computerChoice}`);
+    resultText.textContent = `It's a draw! You both picked ${computerChoice}`;
   } else if (
-    (humanChoice === "rock" && computerChoice === "scissors") ||
-    (humanChoice === "paper" && computerChoice === "rock") ||
-    (humanChoice === "scissors" && computerChoice === "paper")
+    (humanChoice === "Rock" && computerChoice === "Scissors") ||
+    (humanChoice === "Paper" && computerChoice === "Rock") ||
+    (humanChoice === "Scissors" && computerChoice === "Paper")
   ) {
     humanScore++; 
-    console.log(`The Computer has picked ${computerChoice}. You win!`);
+    resultText.textContent = `The Computer has picked ${computerChoice}. You win!`;
   } else {
     computerScore++;
-    console.log(`The Computer has picked ${computerChoice}. You lose!`);
+    resultText.textContent = `The Computer has picked ${computerChoice}. You lose!`;
   }
 }
 
-function playRound() {
+function playRound(humanChoice) {
+    if(humanScore === 0 && computerScore === 0) {
+      winnerText.textContent = "";
+    }
     const computerChoice = randomChoice();
-    const humanChoice = userInput();
 
     calculateRoundWinner(humanChoice, computerChoice);
-    console.log(`Current Score: Player: ${humanScore}, Computer: ${computerScore}`);
+    scoreText.textContent = `Current Score: Player: ${humanScore}, Computer: ${computerScore}`;
+
+    checkForWinner();
 }
 
-function calculateOverallWinner () {
-    if (humanScore === computerScore) {
-        console.log("No winner in sight! It's an overall draw!");
-    } else if (humanScore > computerScore) {
-        console.log("Congrats! You won overall!");
+function checkForWinner () {
+    if (humanScore === 5) {
+        winnerText.textContent = "Congrats! You won overall!";
+        humanScore = 0;
+        computerScore = 0;
+    } else if (computerScore === 5){
+        winnerText.textContent = "What a bummer! Looks like the computer won this battle!";
+        humanScore = 0;
+        computerScore = 0;
     } else {
-        console.log("What a bummer! Looks like the computer won this battle!");
+      return;
     }
 }
 
-let test = "Hallo";
+buttons.forEach((btn) => {
+  btn.addEventListener("click",(e) => {
+    playRound(e.currentTarget.innerText);
+  })
+})
+
