@@ -52,14 +52,3 @@ function calculateOverallWinner () {
         console.log("What a bummer! Looks like the computer won this battle!");
     }
 }
-
-function playGame () {
-    for (let i = 0; i < 5 ; i++) {
-        playRound();
-    }
-    calculateOverallWinner();
-}
-
-let test = "hallo";
-
-playGame()
