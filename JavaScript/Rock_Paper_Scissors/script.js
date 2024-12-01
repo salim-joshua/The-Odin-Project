@@ -56,7 +56,7 @@ function checkForWinner () {
 
 buttons.forEach((btn) => {
   btn.addEventListener("click",(e) => {
-    playRound(e.currentTarget.innerText);
+    playRound(e.currentTarget.value);
   })
 })
 
