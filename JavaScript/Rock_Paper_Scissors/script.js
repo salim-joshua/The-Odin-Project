@@ -35,7 +35,7 @@ function playRound(humanChoice) {
     const computerChoice = randomChoice();
 
     calculateRoundWinner(humanChoice, computerChoice);
-    scoreText.textContent = `Current Score: Player: ${humanScore}, Computer: ${computerScore}`;
+    scoreText.textContent = `Score: Player: ${humanScore} | Computer: ${computerScore}`;
 
     checkForWinner();
 }
@@ -43,10 +43,12 @@ function playRound(humanChoice) {
 function checkForWinner () {
     if (humanScore === 5) {
         winnerText.textContent = "Congrats! You won overall!";
+        winnerText.style.color = "#88c472";
         humanScore = 0;
         computerScore = 0;
     } else if (computerScore === 5){
         winnerText.textContent = "What a bummer! Looks like the computer won this battle!";
+        winnerText.style.color = "#c47272";
         humanScore = 0;
         computerScore = 0;
     } else {
