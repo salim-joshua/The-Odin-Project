@@ -16,6 +16,10 @@ function generatePixel (gridSize) {
     pixel.style.width = pixelSize;
     pixel.style.height = pixelSize;
 
+    pixel.addEventListener ("mouseover", () => {
+        pixel.style.backgroundColor = "white";
+    })
+
     return pixel;
 }
 
