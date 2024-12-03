@@ -1,11 +1,17 @@
 const sketchboard = document.querySelector(".sketchboard");
 const setGridSizeBtn = document.getElementById("set-size-btn");
 const gridSizeInput = document.getElementById("gridsize");
+const clearGridBtn = document.getElementById("clear-grid-btn");
 
 let gridSize = 16;
 
-function setGridSize () {
-    gridSize = gridSizeInput.value;
+function updateGrid () {
+
+    if(gridSizeInput.value) {
+        gridSize = gridSizeInput.value;
+    } else {
+        gridSize = gridSize;
+    }
 
     if (gridSize <= 100 && gridSize > 0) {
         deleteGrid();
@@ -41,11 +47,12 @@ function generatePixel (gridSize) {
 }
 
 function calculateSize (gridSize) {
-    pixelSize = (960/gridSize); 
+    pixelSize = (800/gridSize); 
     return pixelSize + "px";
 }
 
 generateGrid(gridSize);
 
-setGridSizeBtn.addEventListener ("click", () => setGridSize());
+setGridSizeBtn.addEventListener ("click", () => updateGrid());
+clearGridBtn.addEventListener("click", () => updateGrid());
 
