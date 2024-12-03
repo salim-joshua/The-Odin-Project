@@ -85,3 +85,32 @@
      ```
 
 ---
+
+### 9. Opacity Implementation
+
+Start at 0 opacity and then increase by 0.1 every time you hover over it until you reach 1.0:
+
+CSS
+
+.grid {
+    opacity: var(--grid_opacity, 0);
+}
+
+     ```javascript
+
+const grid = document.querySelector(".grid");
+
+grid.addEventListener("mousenter", incrementGridOpacity);
+
+function incrementGridOpacity(){
+    const currOpacity = parseFloat(
+        window.getComputedStyle(grid).getPropertyValue("--grid_opacity")
+    );
+    const opacity = Math.min(currOpacity + 0.1, 1);
+
+    grid.style.setProperty("--grid_opacity", opacity);
+}
+
+     ```
+
+---
