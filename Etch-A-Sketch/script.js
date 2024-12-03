@@ -40,13 +40,14 @@ function generatePixel (gridSize) {
     pixel.style.height = pixelSize;
 
     pixel.addEventListener ("mouseover", () => {
-        let currentOpactiy = Number(pixel.style.opacity);
-        let newOpacity = Math.floor((currentOpactiy + 0.1) * 10 ) / 10;
+        let currentOpactiy = parseFloat(pixel.style.opacity) || 0;
+        let newOpacity = Math.min(currentOpactiy + 0.1, 1);
+        newOpacity = parseFloat(newOpacity.toFixed(1));
         console.log(newOpacity);
         pixel.style.backgroundColor = "white";
         pixel.style.opacity = newOpacity;
         
-    })
+    });
 
     return pixel;
 }
