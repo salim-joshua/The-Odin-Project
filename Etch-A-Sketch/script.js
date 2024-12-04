@@ -2,8 +2,28 @@ const sketchboard = document.querySelector(".sketchboard");
 const setGridSizeBtn = document.getElementById("set-size-btn");
 const gridSizeInput = document.getElementById("gridsize");
 const clearGridBtn = document.getElementById("clear-grid-btn");
+const colorButtons = document.querySelectorAll(".color-btn");
 
 let gridSize = 16;
+let currentColor = "#ffffff";
+let selectedButton = document.getElementById("white");
+
+function setColorBtnBackground () {
+    colorButtons.forEach((btn) => {
+        btn.style.backgroundColor = btn.value;
+    })
+}
+
+setColorBtnBackground();
+
+colorButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        selectedButton.classList.remove("selected");
+        selectedButton = btn;
+        selectedButton.classList.add("selected");
+        currentColor = btn.value;
+    })
+})
 
 function updateGrid () {
 
@@ -44,7 +64,7 @@ function generatePixel (gridSize) {
         let newOpacity = Math.min(currentOpactiy + 0.1, 1);
         newOpacity = parseFloat(newOpacity.toFixed(1));
         console.log(newOpacity);
-        pixel.style.backgroundColor = "white";
+        pixel.style.backgroundColor = currentColor;
         pixel.style.opacity = newOpacity;
         
     });
