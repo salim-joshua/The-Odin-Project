@@ -88,4 +88,12 @@ html, body {
     font-weight: 700;
 }
 
+#erase-btn {
+    padding: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    border-right: 25px solid rgb(242, 150, 165);
+    border-radius: 8px;
+}
+
 

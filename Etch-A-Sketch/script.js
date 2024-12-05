@@ -3,6 +3,7 @@ const setGridSizeBtn = document.getElementById("set-size-btn");
 const gridSizeInput = document.getElementById("gridsize");
 const clearGridBtn = document.getElementById("clear-grid-btn");
 const colorButtons = document.querySelectorAll(".color-btn");
+const eraseButton = document.getElementById("erase-btn");
 
 let gridSize = 16;
 let currentColor = "#ffffff";
@@ -23,6 +24,13 @@ colorButtons.forEach((btn) => {
         selectedButton.classList.add("selected");
         currentColor = btn.value;
     })
+})
+
+eraseButton.addEventListener("click", () => {
+    selectedButton.classList.remove("selected");
+    selectedButton = eraseButton;
+    selectedButton.classList.add("selected");
+    currentColor = "transparent";
 })
 
 function updateGrid () {
