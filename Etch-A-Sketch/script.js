@@ -71,7 +71,6 @@ function generatePixel (gridSize) {
         let currentOpactiy = parseFloat(pixel.style.opacity) || 0;
         let newOpacity = Math.min(currentOpactiy + 0.1, 1);
         newOpacity = parseFloat(newOpacity.toFixed(1));
-        console.log(newOpacity);
         pixel.style.backgroundColor = currentColor;
         pixel.style.opacity = newOpacity;
         

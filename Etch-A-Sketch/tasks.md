@@ -4,5 +4,8 @@
 - Draw on Mouse-Click (Hold)
 
 ## Settings
- - Pick Eraser
  - Toggle Grid-Border
+ - Toggle Opacity effect
+
+## Bug Fixes
+ - Make opacity affect only the background color, not the border
