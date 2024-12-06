@@ -49,9 +49,13 @@ function updateGrid () {
 } 
 
 function generateGrid (gridSize) {
+
+    const fragment = document.createDocumentFragment();
+
     for (let i = 0; i < (gridSize ** 2); i++) {
-        sketchboard.appendChild(generatePixel(gridSize));
+        fragment.appendChild(generatePixel(gridSize));
     }
+    sketchboard.appendChild(fragment);
 }
 
 function deleteGrid () {
