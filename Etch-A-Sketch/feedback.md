@@ -22,20 +22,6 @@
 
 ## **Suggestions for Improvement**
 
-### 1. **Conciseness**: Combine similar operations or reduce redundancy.
-   - Example: Combine `setGridSize` and the event listener for `click` into a single function:
-     ```javascript
-     setGridSizeBtn.addEventListener("click", () => {
-         const size = gridSizeInput.value;
-         if (size > 0 && size <= 100) {
-             deleteGrid();
-             generateGrid(size);
-         } else {
-             alert("Please enter a grid size between 1 and 100");
-         }
-     });
-     ```
-
 ### 2. **Avoid Global Variables**
    - The `gridSize` variable is global but can be avoided since it doesn't need to persist across function calls. Use parameters or local variables instead.
 
@@ -60,12 +46,6 @@
      ```
      ```javascript
      pixel.addEventListener("mouseover", () => pixel.classList.add("hovered"));
-     ```
-
-### 5. **Validation and Defaults**
-   - Set a default value for the input field to reflect the initial grid size:
-     ```html
-     <input type="number" id="gridsize" value="16">
      ```
 
 ### 7. **Accessibility**:
