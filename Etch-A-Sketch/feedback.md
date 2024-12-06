@@ -68,21 +68,8 @@
      <input type="number" id="gridsize" value="16">
      ```
 
-### 6. **Naming Conventions**:
-   - The function `setGridSize` is slightly misleading since it does more than just setting the size. Rename it to something like `updateGrid`.
-
 ### 7. **Accessibility**:
-   - Add ARIA attributes or descriptive labels for the input and button to improve accessibility.
-
-### 8. **Error Handling**:
-   - Handle edge cases where `gridsizeInput.value` is empty or not a number:
-     ```javascript
-     const size = parseInt(gridSizeInput.value, 10);
-     if (!size || size <= 0 || size > 100) {
-         alert("Please enter a valid number between 1 and 100");
-         return;
-     }
-     ```
+   - Add ARIA attributes or descriptive labels for the input and button to improve accessibility.A
 
 ---
 

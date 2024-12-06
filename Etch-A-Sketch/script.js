@@ -35,17 +35,15 @@ eraseButton.addEventListener("click", () => {
 
 function updateGrid () {
 
-    if(gridSizeInput.value) {
-        gridSize = gridSizeInput.value;
-    } else {
-        gridSize = gridSize;
-    }
+    const size = parseInt(gridSizeInput.value, 10);
 
-    if (gridSize <= 100 && gridSize > 0) {
-        deleteGrid();
-        generateGrid(gridSize);
+    if (!size || size <= 0 || size > 100) {
+        alert("Please enter a valid number between 1 and 100");
+        return;
     } else {
-        alert("Please enter a grid size between 1 and 100");
+        deleteGrid();
+        generateGrid(size);
+        gridSize = size;
     }
 
 } 
