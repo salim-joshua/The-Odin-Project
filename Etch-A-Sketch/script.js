@@ -5,7 +5,6 @@ const clearGridBtn = document.getElementById("clear-grid-btn");
 const colorButtons = document.querySelectorAll(".color-btn");
 const eraseButton = document.getElementById("erase-btn");
 
-let gridSize = 16;
 let currentColor = "#ffffff";
 let selectedButton = document.getElementById("white");
 
@@ -86,7 +85,7 @@ function calculateSize (gridSize) {
     return pixelSize + "px";
 }
 
-generateGrid(gridSize);
+generateGrid(16);
 
 setGridSizeBtn.addEventListener ("click", () => updateGrid());
 clearGridBtn.addEventListener("click", () => updateGrid());
