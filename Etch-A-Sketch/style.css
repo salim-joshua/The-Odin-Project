@@ -40,8 +40,9 @@ html, body {
 }
 
 .pixel {
-    border: 1px solid rgb(59, 66, 93);
+    border: 1px dotted rgb(59, 66, 93);
     box-sizing: border-box;
+    border-radius: 5px;
 }
 
 .settings-btn {
