@@ -5,12 +5,12 @@ const clearGridBtn = document.getElementById("clear-grid-btn");
 const colorButtons = document.querySelectorAll(".color-btn");
 const eraseButton = document.getElementById("erase-btn");
 
-let currentColor = "#ffffff";
+let currentColor = "255 255 255";
 let selectedButton = document.getElementById("white");
 
 function setColorBtnBackground () {
     colorButtons.forEach((btn) => {
-        btn.style.backgroundColor = btn.value;
+        btn.style.backgroundColor = `rgb(${btn.value})`;
     })
 }
 
@@ -69,11 +69,12 @@ function generatePixel (gridSize) {
     pixel.style.height = pixelSize;
 
     pixel.addEventListener ("mouseover", () => {
-        let currentOpactiy = parseFloat(pixel.style.opacity) || 0;
-        let newOpacity = Math.min(currentOpactiy + 0.1, 1);
-        newOpacity = parseFloat(newOpacity.toFixed(1));
-        pixel.style.backgroundColor = currentColor;
-        pixel.style.opacity = newOpacity;
+        let currentOpactiy = parseFloat(pixel.dataset.opacity) || 0;
+        let newOpacity = Math.min(currentOpactiy + 10, 100);
+        newOpacity = parseFloat(newOpacity.toFixed(0));
+        
+        pixel.style.backgroundColor = `rgb(${currentColor} / ${newOpacity}%)`;
+        pixel.dataset.opacity = newOpacity;
         
     });
 
