@@ -10,6 +10,10 @@ html, body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+h4 {
+    margin-bottom: 15px;
+}
+
 .content {
     display: flex;
     flex-direction: column;
@@ -54,7 +58,6 @@ html, body {
 }
 
 .colors {
-    margin-top: 10px;
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
@@ -95,6 +98,27 @@ html, body {
     font-weight: 600;
     border-right: 25px solid rgb(242, 150, 165);
     border-radius: 8px;
+}
+
+#opacity-btn {
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+}
+
+.toggle-container {
+    background-color: #141924;
+    width: 45px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    background-color: rgb(114, 180, 114);
+}
+
+.toggle-container.inactive {
+    justify-content: start;
+    background-color: #141924;
 }
 
 
