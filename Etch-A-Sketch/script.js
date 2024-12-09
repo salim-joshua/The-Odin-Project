@@ -101,7 +101,8 @@ function generatePixel (gridSize) {
         }
 
         if (currentColor === "transparent") {
-            pixel.style.backgroundColor = "transparent";
+            pixel.style.backgroundColor = `rgb(0 0 0 / 0%)`;
+            newOpacity = 0;
         } else {
             pixel.style.backgroundColor = `rgb(${currentColor} / ${newOpacity}%)`;
         }
