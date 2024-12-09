@@ -96,11 +96,16 @@ function generatePixel (gridSize) {
         let newOpacity = Math.min(currentOpactiy + 10, 100);
         newOpacity = parseFloat(newOpacity.toFixed(0));
         
-        if(!opacityVariation) {
+        if (!opacityVariation) {
             newOpacity = 100;    
         }
 
-        pixel.style.backgroundColor = `rgb(${currentColor} / ${newOpacity}%)`;
+        if (currentColor === "transparent") {
+            pixel.style.backgroundColor = "transparent";
+        } else {
+            pixel.style.backgroundColor = `rgb(${currentColor} / ${newOpacity}%)`;
+        }
+
         pixel.dataset.opacity = newOpacity;
         
     });
