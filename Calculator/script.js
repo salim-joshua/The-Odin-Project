@@ -1,6 +1,7 @@
 const numberButtons = document.querySelectorAll(".number");
 const operatorButtons = document.querySelectorAll(".operator")
 const numberDisplay = document.getElementById("numberDisplay");
+const clearButton = document.getElementById("clear");
 
 let storedValue = 0;
 let storedOperator = "";
@@ -14,6 +15,12 @@ function updateDisplayValue (currentValue, numValue) {
         currentValue += numValue;
     }
     numberDisplay.textContent = currentValue;
+}
+
+function clearDisplay () {
+    numberDisplay.textContent = 0;
+    storedValue = 0;
+    storedOperator = "";
 }
 
 /* OPERATIONAL FUNCTIONS */
@@ -56,3 +63,5 @@ numberButtons.forEach((numBtn) => {
 operatorButtons.forEach((opButton) => {
     opButton.addEventListener("click", () => storeValueAndOperator(numberDisplay.textContent, opButton.value));
 })
+
+clearButton.addEventListener("click", () => clearDisplay());
