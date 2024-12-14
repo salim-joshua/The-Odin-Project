@@ -22,7 +22,8 @@ html, body {
 
 .display {
     margin-bottom: 20px;
-    direction: rtl;
+    display: flex;
+    justify-content: flex-end;
     max-width: 320px;
     overflow: hidden;
 }
