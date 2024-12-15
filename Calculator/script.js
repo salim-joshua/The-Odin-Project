@@ -1,7 +1,8 @@
 const numberButtons = document.querySelectorAll(".number");
-const operatorButtons = document.querySelectorAll(".operator")
+const operatorButtons = document.querySelectorAll(".operator");
 const numberDisplay = document.getElementById("numberDisplay");
 const clearButton = document.getElementById("clear");
+const negateButton = document.getElementById("negation");
 
 let firstValue = 0;
 let secondValue = 0;
@@ -60,6 +61,13 @@ function calculate (firstValue, storedOperator, currentValue) {
     numberDisplay.textContent = result;
 }
 
+// UTILS
+
+function negateValue (num) {
+    num = (parseFloat(num) * (-1));
+    numberDisplay.textContent = num;
+}
+
 
 /* EVENT LISTENERS */
  
@@ -72,3 +80,5 @@ operatorButtons.forEach((opButton) => {
 })
 
 clearButton.addEventListener("click", () => clearDisplay());
+
+negateButton.addEventListener("click", () => negateValue(numberDisplay.textContent));
