@@ -1,9 +1,12 @@
 # Tasks
 
-## HTML
+## Current Bugs
+    - repeatedly hitting and operator set the first value back to 0
+    - repeatedly hitting equals on negative value calculation turn values positive because of double negation
+    - its possible to input multiple commas
 
-- html buttons for numbers from 0 - 9
-- buttons for addition, subtraction, multiply and divide
-- equals button
-- number and result display
-- Reset button
+## Features to implement
+    - keyboard input
+    - expression evaluation (for keyboard input)
+    - Calculation history
+    
