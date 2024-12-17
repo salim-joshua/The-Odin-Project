@@ -24,8 +24,17 @@ html, body {
     margin-bottom: 20px;
     display: flex;
     justify-content: flex-end;
+    align-items: end;
     max-width: 320px;
     overflow: hidden;
+    flex-direction: column;
+}
+
+#calculationDisplay {
+    font-size: 18px;
+    color:#948f8f;
+    min-height: 24px; 
+
 }
 
 .inputs {

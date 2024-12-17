@@ -1,8 +1,16 @@
 const numberButtons = document.querySelectorAll(".number");
 const operatorButtons = document.querySelectorAll(".operator");
 const numberDisplay = document.getElementById("numberDisplay");
+const calculationDisplay = document.getElementById("calculationDisplay");
 const clearButton = document.getElementById("clear");
 const negateButton = document.getElementById("negation");
+
+const operators = {
+    add: "+",
+    subtract: "-",
+    multiply: "×",
+    divide: "÷",
+};
 
 let currentValue = parseFloat(numberDisplay.textContent);
 
@@ -10,9 +18,10 @@ let firstValue = 0;
 let secondValue = 0;
 let storedOperator = "";
 
+
 /* DISPLAY FUNCTIONS */
 
-function updateDisplayValue (numValue) {
+function updateDisplay (numValue) {
     if(currentValue === 0) {
         currentValue = numValue;
     } else {
@@ -23,6 +32,7 @@ function updateDisplayValue (numValue) {
 
 function clearDisplay () {
     numberDisplay.textContent = 0;
+    calculationDisplay.textContent = "";
     currentValue = 0;
     firstValue = 0;
     secondValue = 0;
@@ -39,12 +49,15 @@ function storeValueAndOperator (operator) {
         firstValue = currentValue;
         storedOperator = operator;
         numberDisplay.textContent = 0;
+        calculationDisplay.textContent = firstValue + " " + operators[storedOperator];
         currentValue = 0;
     } else if (operator != "equals" && firstValue != 0) {
         storedOperator = operator;
+        calculationDisplay.textContent = firstValue + " " + operators[storedOperator];
     } else if (operator === "equals") {
         secondValue = currentValue;
         calculate(storedOperator);
+        calculationDisplay.textContent = firstValue + " " + operators[storedOperator] + " " + secondValue;
     } else {
         numberDisplay.textContent = "ERROR";
     }
@@ -89,7 +102,7 @@ function negateValue (num) {
 /* EVENT LISTENERS */
  
 numberButtons.forEach((numBtn) => {
-    numBtn.addEventListener("click", () => updateDisplayValue(numBtn.value))
+    numBtn.addEventListener("click", () => updateDisplay(numBtn.value))
 })
 
 operatorButtons.forEach((opButton) => {
