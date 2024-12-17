@@ -22,7 +22,6 @@
 
 ### Code Structure and Readability:
 - **Comments:** Add more comments explaining logic, especially for `storeValueAndOperator` and `calculate`.
-- **Function Naming:** Use consistent naming conventions (e.g., `updateDisplayValue` could be `updateDisplay` to align with other function names like `clearDisplay`).
 
 ### Security Concerns:
 - **`eval`-like Behavior:** Relying on `value` attributes from the DOM could be dangerous if the DOM is manipulated maliciously. Sanitize or validate user input before processing.
@@ -31,7 +30,7 @@
 ### Handling Edge Cases:
 - **Chaining Operations:** Finalize the current operation when a new operator is pressed (e.g., `5 + 5 +`).
 - **Decimal Input:** Prevent invalid input like multiple decimals (e.g., `3.3.3`).
-- **UI Reset After Equals:** After pressing `=`, entering a new number should reset the calculator instead of appending.
+
 
 ### Code Duplication:
 - **Operator Logic:** Simplify operator handling in the `calculate` function using a mapping object or `switch` statement:
@@ -70,14 +69,9 @@ const state = {
 
 ## **Suggested Enhancements**
 
-### Input Validation:
-- Prevent invalid inputs like multiple leading zeros (`0001`).
-
 ### Error Handling:
 - Add a universal error state to handle unexpected inputs or logic issues (e.g., display "Syntax Error" instead of "ERROR").
 
-### UI Feedback:
-- Highlight the last selected operator for better user feedback.
 
 ### Responsive Design:
 - Ensure buttons scale better on smaller screens by testing on various devices.

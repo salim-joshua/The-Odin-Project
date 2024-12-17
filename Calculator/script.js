@@ -22,7 +22,7 @@ let storedOperator = "";
 /* DISPLAY FUNCTIONS */
 
 function updateDisplay (numValue) {
-    if(currentValue === 0) {
+    if(currentValue == 0) {
         currentValue = numValue;
     } else {
         currentValue += numValue;
@@ -115,7 +115,7 @@ function negateValue (num) {
     numberDisplay.textContent = num;
 }
 
-function highlightButton () {
+function enableActiveButton () {
     operatorButtons.forEach((btn) => {
         if (btn.value === storedOperator) {
             btn.classList.add("active-btn");
@@ -144,7 +144,7 @@ numberButtons.forEach((numBtn) => {
 operatorButtons.forEach((opButton) => {
     opButton.addEventListener("click", () => {
         storeValueAndOperator(opButton.value)
-        highlightButton();
+        enableActiveButton();
     });
 })
 
