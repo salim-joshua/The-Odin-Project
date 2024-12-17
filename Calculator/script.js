@@ -31,6 +31,7 @@ function updateDisplay (numValue) {
 }
 
 function clearDisplay () {
+    disableActiveButton();
     numberDisplay.textContent = 0;
     calculationDisplay.textContent = "";
     currentValue = 0;
@@ -57,7 +58,7 @@ function storeValueAndOperator (operator) {
     } else if (operator === "equals") {
         secondValue = currentValue;
         calculate(storedOperator);
-        calculationDisplay.textContent = firstValue + " " + operators[storedOperator] + " " + secondValue;
+        disableActiveButton();
     } else {
         numberDisplay.textContent = "ERROR";
     }
@@ -86,6 +87,7 @@ function calculate (storedOperator) {
         result = Math.round((firstValue + secondValue) * 10000) / 10000;
     }
 
+    calculationDisplay.textContent = firstValue + " " + operators[storedOperator] + " " + secondValue;
     firstValue = result;
     numberDisplay.textContent = firstValue;
 }
@@ -98,6 +100,25 @@ function negateValue (num) {
     numberDisplay.textContent = num;
 }
 
+function highlightButton () {
+    operatorButtons.forEach((btn) => {
+        if (btn.value === storedOperator) {
+            btn.classList.add("active-btn");
+        } else {
+            btn.classList.remove("active-btn");
+        }
+    })
+}
+
+function disableActiveButton () {
+
+    let activeButton = document.querySelector(".active-btn");
+
+    if (activeButton) {
+        activeButton.classList.remove("active-btn");
+    }
+}
+
 
 /* EVENT LISTENERS */
  
@@ -106,7 +127,10 @@ numberButtons.forEach((numBtn) => {
 })
 
 operatorButtons.forEach((opButton) => {
-    opButton.addEventListener("click", () => storeValueAndOperator(opButton.value));
+    opButton.addEventListener("click", () => {
+        storeValueAndOperator(opButton.value)
+        highlightButton();
+    });
 })
 
 clearButton.addEventListener("click", () => clearDisplay());
