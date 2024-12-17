@@ -45,20 +45,35 @@ function clearDisplay () {
 function storeValueAndOperator (operator) {
 
     if (operator === "equals" && storedOperator === "") {
+
         numberDisplay.textContent = currentValue;
+
     }  else if (operator != "equals" && firstValue === 0) {
+
         firstValue = currentValue;
         storedOperator = operator;
         numberDisplay.textContent = 0;
         calculationDisplay.textContent = firstValue + " " + operators[storedOperator];
         currentValue = 0;
-    } else if (operator != "equals" && firstValue != 0) {
+
+    } else if (operator != "equals" && firstValue != 0 && secondValue === 0) {
+
         storedOperator = operator;
         calculationDisplay.textContent = firstValue + " " + operators[storedOperator];
+    
+    } else if (operator != "equals" && secondValue != 0) {
+
+        storedOperator = operator;
+        numberDisplay.textContent = 0;
+        currentValue = 0;
+        calculationDisplay.textContent = firstValue + " " + operators[storedOperator];
+
     } else if (operator === "equals") {
+
         secondValue = currentValue;
         calculate(storedOperator);
         disableActiveButton();
+
     } else {
         numberDisplay.textContent = "ERROR";
     }
