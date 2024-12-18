@@ -71,8 +71,7 @@ function storeValueAndOperator (operator) {
     } else if (operator === "equals") {
 
         secondValue = currentValue;
-        calculate(storedOperator);
-        disableActiveButton();
+        calculate(storedOperator)
 
     } else {
         numberDisplay.textContent = "ERROR";
