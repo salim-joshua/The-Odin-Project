@@ -47,12 +47,20 @@ function storeValueAndOperator (operator) {
     if (operator === "equals" && storedOperator === "") {
 
         numberDisplay.textContent = currentValue;
-
-    }  else if (operator != "equals" && firstValue === 0) {
-
+        
+    } else if (operator != "equals" && firstValue === 0) {
+        
         firstValue = currentValue;
         storedOperator = operator;
         numberDisplay.textContent = 0;
+        calculationDisplay.textContent = firstValue + " " + operators[storedOperator];
+        currentValue = 0;
+
+    } else if (operator != "equals" && firstValue != 0 && numberDisplay.textContent != 0) {
+        
+        secondValue = currentValue;
+        calculate(storedOperator);
+        storedOperator = operator;
         calculationDisplay.textContent = firstValue + " " + operators[storedOperator];
         currentValue = 0;
 
@@ -71,7 +79,7 @@ function storeValueAndOperator (operator) {
     } else if (operator === "equals") {
 
         secondValue = currentValue;
-        calculate(storedOperator)
+        calculate(storedOperator);
 
     } else {
         numberDisplay.textContent = "ERROR";
