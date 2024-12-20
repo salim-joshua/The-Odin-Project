@@ -1,23 +1,5 @@
 # Feedback on JavaScript Calculator
 
-## **Strengths**
-
-### Functional and Modular Code:
-- Functions like `updateDisplayValue`, `clearDisplay`, and `storeValueAndOperator` make the code modular and easier to maintain.
-- Event listeners are logically organized.
-
-### User Experience:
-- Buttons are styled with CSS, providing a clean and modern UI.
-- Includes essential calculator functionalities like negation and division by zero handling.
-
-### Precision Handling:
-- Use of `Math.round` with a precision factor is commendable to avoid floating-point inaccuracies.
-
-### Accessibility:
-- Layout is simple and responsive with flex and grid systems.
-
----
-
 ## **Areas for Improvement**
 
 ### Code Structure and Readability:
@@ -26,11 +8,6 @@
 ### Security Concerns:
 - **`eval`-like Behavior:** Relying on `value` attributes from the DOM could be dangerous if the DOM is manipulated maliciously. Sanitize or validate user input before processing.
 - **Potential Overflow:** Add checks for very large numbers to prevent overflow or UI issues.
-
-### Handling Edge Cases:
-- **Chaining Operations:** Finalize the current operation when a new operator is pressed (e.g., `5 + 5 +`).
-- **Decimal Input:** Prevent invalid input like multiple decimals (e.g., `3.3.3`).
-
 
 ### Code Duplication:
 - **Operator Logic:** Simplify operator handling in the `calculate` function using a mapping object or `switch` statement:
@@ -71,10 +48,6 @@ const state = {
 
 ### Error Handling:
 - Add a universal error state to handle unexpected inputs or logic issues (e.g., display "Syntax Error" instead of "ERROR").
-
-
-### Responsive Design:
-- Ensure buttons scale better on smaller screens by testing on various devices.
 
 ---
 
