@@ -4,6 +4,7 @@ const numberDisplay = document.getElementById("numberDisplay");
 const calculationDisplay = document.getElementById("calculationDisplay");
 const clearButton = document.getElementById("clear");
 const negateButton = document.getElementById("negation");
+const commaButton = document.getElementById("comma");
 
 const operators = {
     add: "+",
@@ -28,16 +29,19 @@ function updateDisplay (numValue) {
         currentValue += numValue;
     }
     numberDisplay.textContent = currentValue;
+    checkForComma();
 }
 
 function clearDisplay () {
-    disableActiveButton();
     numberDisplay.textContent = 0;
     calculationDisplay.textContent = "";
     currentValue = 0;
     firstValue = 0;
     secondValue = 0;
     storedOperator = "";
+    
+    disableActiveButton();
+    checkForComma();
 }
 
 /* OPERATIONAL FUNCTIONS */
@@ -141,6 +145,13 @@ function disableActiveButton () {
     }
 }
 
+function checkForComma () {
+    if (numberDisplay.textContent.indexOf(".") > -1) {
+        commaButton.disabled = true;
+    } else {
+        commaButton.disabled = false;
+    }
+}
 
 /* EVENT LISTENERS */
  

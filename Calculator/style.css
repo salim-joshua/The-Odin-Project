@@ -59,6 +59,11 @@ html, body {
     border: none;
 }
 
+button:disabled {
+    background-color: #141414;
+    color: gray;
+}
+
 .controls {
     margin-bottom: 15px;
 }
